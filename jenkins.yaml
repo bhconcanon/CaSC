@@ -1,0 +1,199 @@
+credentials:
+  system:
+    domainCredentials:
+    - credentials:
+      - usernamePassword:
+          description: "Dylan GitHub Creds"
+          id: "d5cbe393-a332-4e70-8779-f6210ed20b3d"
+          password: "{AQAAABAAAAAQFpoIlXTJv6Sl9k9TvnXWJNg4ctWCBiZ66+UE4Edp9Ps=}"
+          scope: GLOBAL
+          username: "dylanmeh"
+jenkins:
+  agentProtocols:
+  - "Diagnostic-Ping"
+  - "JNLP4-connect"
+  - "OperationsCenter2"
+  - "Ping"
+  authorizationStrategy: "cloudBeesRoleBasedAccessControl"
+  crumbIssuer:
+    standard:
+      excludeClientIPFromCrumb: false
+  disableRememberMe: false
+  disabledAdministrativeMonitors:
+  - "hudson.diagnosis.ReverseProxySetupMonitor"
+  labelAtoms:
+  - name: "master"
+  markupFormatter: "plainText"
+  mode: NORMAL
+  myViewsTabBar: "standard"
+  noUsageStatistics: true
+  numExecutors: 2
+  primaryView:
+    all:
+      name: "all"
+  projectNamingStrategy: "standard"
+  quietPeriod: 5
+  remotingSecurity:
+    enabled: true
+  scmCheckoutRetryCount: 0
+  securityRealm: "operationsCenter"
+  slaveAgentPort: 50000
+  views:
+  - all:
+      name: "all"
+  viewsTabBar: "standard"
+advisor:
+  acceptToS: true
+  email: "bhconcanon@gmail.com"
+  excludedComponents:
+  - "AgentsSystemConfiguration"
+  - "AgentsJVMProcessSystemMetricsContents"
+  - "GCLogs"
+  - "ConfigFileComponent"
+  - "RootCAs"
+  - "SlaveLogs"
+  - "OtherConfigFilesComponent"
+  - "HeapUsageHistogram"
+  - "OtherLogs"
+  nagDisabled: true
+beekeeper:
+  enabled: true
+  securityWarnings:
+    enabledForCore: true
+    enabledForPlugins: true
+  upgrades:
+    autoDowngradePlugins: false
+    autoUpgradePlugins: false
+notificationConfiguration:
+  enabled: true
+  router: "operationsCenter"
+security:
+  anonymizeSupportBundle:
+    enabled: false
+  apiToken:
+    creationOfLegacyTokenEnabled: false
+    tokenGenerationOnCreationEnabled: false
+    usageStatisticsEnabled: true
+  sSHD:
+    port: -1
+unclassified:
+  buildDiscarders:
+    configuredBuildDiscarders:
+    - "jobBuildDiscarder"
+  cloudBeesSCMReporting:
+    enabled: true
+  email-ext:
+    adminRequiredForTemplateTesting: false
+    allowUnregisteredEnabled: false
+    charset: "UTF-8"
+    debugMode: false
+    defaultBody: |-
+      $PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS:
+
+      Check console output at $BUILD_URL to view the results.
+    defaultContentType: "text/plain"
+    defaultSubject: "$PROJECT_NAME - Build # $BUILD_NUMBER - $BUILD_STATUS!"
+    defaultSuffix: "@gmail.com"
+    defaultTriggerIds:
+    - "hudson.plugins.emailext.plugins.trigger.AbortedTrigger"
+    - "hudson.plugins.emailext.plugins.trigger.AlwaysTrigger"
+    - "hudson.plugins.emailext.plugins.trigger.PreBuildTrigger"
+    - "hudson.plugins.emailext.plugins.trigger.FirstFailureTrigger"
+    - "hudson.plugins.emailext.plugins.trigger.SecondFailureTrigger"
+    - "hudson.plugins.emailext.plugins.trigger.FailureTrigger"
+    - "hudson.plugins.emailext.plugins.trigger.StillFailingTrigger"
+    - "hudson.plugins.emailext.plugins.trigger.XNthFailureTrigger"
+    - "hudson.plugins.emailext.plugins.trigger.BuildingTrigger"
+    - "hudson.plugins.emailext.plugins.trigger.FixedTrigger"
+    - "hudson.plugins.emailext.plugins.trigger.NotBuiltTrigger"
+    - "hudson.plugins.emailext.plugins.trigger.ScriptTrigger"
+    - "hudson.plugins.emailext.plugins.trigger.PreBuildScriptTrigger"
+    - "hudson.plugins.emailext.plugins.trigger.StatusChangedTrigger"
+    - "hudson.plugins.emailext.plugins.trigger.SuccessTrigger"
+    - "hudson.plugins.emailext.plugins.trigger.ImprovementTrigger"
+    - "hudson.plugins.emailext.plugins.trigger.RegressionTrigger"
+    - "hudson.plugins.emailext.plugins.trigger.UnstableTrigger"
+    - "hudson.plugins.emailext.plugins.trigger.FirstUnstableTrigger"
+    - "hudson.plugins.emailext.plugins.trigger.StillUnstableTrigger"
+    - "hudson.plugins.emailext.plugins.trigger.FixedUnhealthyTrigger"
+    mailAccount:
+      smtpHost: "smtp.gmail.com"
+      smtpPassword: "{AQAAABAAAAAQjjFgTI1JeMiaRqv2lKw+aM9GR4Vh9lJNSFS0pd2hahM=}"
+      smtpPort: "465"
+      smtpUsername: "bhconcanon@gmail.com"
+      useSsl: true
+      useTls: true
+    maxAttachmentSize: -1
+    maxAttachmentSizeMb: -1
+    precedenceBulk: false
+    watchingEnabled: false
+  experimentalPlugins:
+    enabled: false
+  fingerprints:
+    fingerprintCleanupDisabled: false
+    storage: "file"
+  gitHubConfiguration:
+    apiRateLimitChecker: ThrottleForNormalize
+  gitHubPluginConfig:
+    configs:
+    - manageHooks: false
+    hookUrl: "http://ace8ae58e21ce46df864f3e59c5925af-1740655093.us-east-1.elb.amazonaws.com/controllerCaSC/github-webhook/"
+  gitSCM:
+    addGitTagAction: false
+    allowSe1dFetch: false
+    createAccountBasedOnEmail: false
+    disableGitToolChooser: false
+    hideCredentials: false
+    showEntireCommitSummaryInChanges: false
+    useExistingAccountWithSameEmail: false
+  globalDefaultFlowDurabilityLevel:
+    durabilityHint: PERFORMANCE_OPTIMIZED
+  globalLibraries:
+    libraries:
+    - defaultVersion: "main"
+      name: "shared-library"
+      retriever:
+        modernSCM:
+          scm:
+            github:
+              configuredByUrl: true
+              id: "002e0388-5691-4f79-9325-400be724402e"
+              repoOwner: "dylanmeh"
+              repository: "Pipeline_Lab1"
+              repositoryUrl: "https://github.com/dylanmeh/Pipeline_Lab1.git"
+              traits:
+              - gitHubBranchDiscovery:
+                  strategyId: 1
+              - gitHubPullRequestDiscovery:
+                  strategyId: 1
+              - gitHubForkDiscovery:
+                  strategyId: 1
+                  trust: "gitHubTrustPermissions"
+  junitTestResultStorage:
+    storage: "file"
+  location:
+    adminAddress: "smtpnotifypipeline@gmail.com"
+    url: "http://ace8ae58e21ce46df864f3e59c5925af-1740655093.us-east-1.elb.amazonaws.com/controllerCaSC/"
+  mailer:
+    charset: "UTF-8"
+    useSsl: false
+    useTls: false
+  operationsCenterRootAction:
+    connectionDetails: "----- BEGIN CONNECTION DETAILS -----\nH4sIAAAAAAAAAB3OSw7CMAxF0b1kTD7QRC2dsgRWkDguP6uunAQGiL0TmB7dJ723ukhcq5pVGNEN\r\
+      \n47RonwbQHo5exwNOOvgAzoUELke1U7fcW6dPvFZhIpR9xybU9VrrNlsLdwYDxC0nxKKBBU15/qiV\r\
+      \nimKIIdK/sn36wnRmeGC/sEQq+PkCJrws/JIAAAA=\r\n----- END CONNECTION DETAILS -----\n"
+  pollSCM:
+    pollingThreadCount: 10
+  usageStatisticsCloudBees:
+    disabledJenkinsUsageStatistics: true
+    usageStatisticsCollected: false
+tool:
+  cloudbeesPluginUsageAnalyzer:
+    enabled: true
+  git:
+    installations:
+    - home: "git"
+      name: "Default"
+  mavenGlobalConfig:
+    globalSettingsProvider: "standard"
+    settingsProvider: "standard"

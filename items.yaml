@@ -1,0 +1,68 @@
+removeStrategy:
+  rbac: SYNC
+  items: NONE
+items:
+- concurrentBuild: true
+  kind: pipeline
+  displayName: Hello-World-Pipeline
+  resumeBlocked: false
+  name: Hello-World-Pipeline
+  description: ''
+  definition:
+    cpsFlowDefinition:
+      sandbox: true
+      script: "pipeline {\n    agent any\n    stages {\n        stage('Echo') {\n\
+        \            steps {\n            sh '''echo \\'HELLO WORLD\\'\n         \
+        \   '''\n            }\n        }\n    \n        stage('Email') {\n      \
+        \      steps {\n            emailext body: '1234', subject: 'TEST', to: 'bhconcanon@gmail.com'\n\
+        \            }\n        }\n    }\n}"
+  disabled: false
+  properties:
+  - durabilityHint:
+      hint: MAX_SURVIVABILITY
+- concurrentBuild: false
+  builders:
+  - shell:
+      command: echo "Hello World!"
+  blockBuildWhenUpstreamBuilding: false
+  blockBuildWhenDownstreamBuilding: false
+  kind: freeStyle
+  displayName: Hello_World
+  name: Hello_World
+  description: ''
+  disabled: false
+  scm:
+    none: {}
+  scmCheckoutStrategy:
+    standard: {}
+- orphanedItemStrategy:
+    defaultOrphanedItemStrategy:
+      pruneDeadBranches: true
+      daysToKeep: -1
+      numToKeep: -1
+  kind: multibranch
+  displayName: pipeline-lab2
+  projectFactory:
+    workflowBranchProjectFactory:
+      scriptPath: Jenkinsfile
+  name: pipeline-lab2
+- concurrentBuild: true
+  kind: pipeline
+  displayName: pipeline1
+  resumeBlocked: false
+  name: pipeline1
+  description: ''
+  definition:
+    cpsScmFlowDefinition:
+      scriptPath: Jenkinsfile
+      scm:
+        gitSCM:
+          userRemoteConfigs:
+          - userRemoteConfig:
+              credentialsId: d5cbe393-a332-4e70-8779-f6210ed20b3d
+              url: https://github.com/dylanmeh/Pipeline_Lab1.git
+          branches:
+          - branchSpec:
+              name: '*/main'
+      lightweight: true
+  disabled: false
